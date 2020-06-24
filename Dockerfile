@@ -11,4 +11,3 @@ COPY dockerfilelint.* /app/
 
 WORKDIR /atm/home
 ENTRYPOINT ["bash", "/app/dockerfilelint.sh"]
- 
