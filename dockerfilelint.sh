@@ -85,8 +85,11 @@ function main () {
     if [ $? -eq 0 ]; then
         status 0 "No errors or warnings found"
         return 0
+    elif [ $? -eq 1 ]; then
+        status 0 "Errors or warnings found"
+        return 0        
     else 
-        status 1 "Errors or warnings found"
+        status 1 "Unknown dockerfilelint exit code"
         return $?        
     fi
 }
