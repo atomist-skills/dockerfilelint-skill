@@ -19,7 +19,7 @@ exports.matcher = async () => {
   
   const check = {
       name: "dockerfilelint",
-      report: "error",
+      report: "always",
       summary: `dockerfilelint found ${result.totalIssues} ${result.totalIssues === 1 ? "issue" : "issues"}`,
       severity: "action_required",
       annotations: [],

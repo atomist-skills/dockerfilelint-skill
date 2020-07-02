@@ -57,6 +57,11 @@ function main () {
         return 1
     fi
 
+    # Bail out early if Dockerfile path does not exist
+    if [[ -z $(find . -name $path) ]]; then 
+        exit 0
+    fi
+
     local outdir=${ATOMIST_OUTPUT_DIR:-/atm/output}
 
     # Make the problem matcher available to the runtime
