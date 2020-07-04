@@ -69,3 +69,7 @@ skill:
         required: true
   subscriptions:
     - file://graphql/subscription/*.graphql
+
+
+
+    
