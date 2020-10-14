@@ -14,8 +14,8 @@ Find problems in your Dockerfiles
 
 Get consistency across your Dockerfiles.
 
--   Run [dockerfilelint](https://github.com/replicatedhq/dockerfilelint)
-    with the same consistent configuration across all of your projects
+-   Run [dockerfilelint](https://github.com/replicatedhq/dockerfilelint) with
+    the same consistent configuration across all of your projects
 -   Also supports repository-specific dockerfilelint configurations
 -   Uses GitHub Checks with code-level annotations for linting rule violations
 
@@ -38,8 +38,10 @@ integration is optional.
 
 1. **Specify an optional dockerfilelint configuration**
 
-    Provide the [dockerfilelint configuration](https://github.com/replicatedhq/dockerfilelint#configuring)
-    to be used for linting when a repository does not have its own configuration.
+    Provide the
+    [dockerfilelint configuration](https://github.com/replicatedhq/dockerfilelint#configuring)
+    to be used for linting when a repository does not have its own
+    configuration.
 
 1. **Determine repository scope**
 
@@ -59,15 +61,16 @@ integration is optional.
 
 1. **Enjoy automatic linting and fixes!**
 
-To create feature requests or bug reports, create an [issue in the repository for this skill](https://github.com/atomist-skills/dockerfilelint-skill/issues).
-See the [code](https://github.com/atomist-skills/dockerfilelint-skill) for the skill.
+To create feature requests or bug reports, create an
+[issue in the repository for this skill](https://github.com/atomist-skills/dockerfilelint-skill/issues).
+See the [code](https://github.com/atomist-skills/dockerfilelint-skill) for the
+skill.
 
 <!---atomist-skill-readme:end--->
 
 ---
 
-Created by [Atomist][atomist].
-Need Help? [Join our Slack workspace][slack].
+Created by [Atomist][atomist]. Need Help? [Join our Slack workspace][slack].
 
 [atomist]: https://atomist.com/ "Atomist - How Teams Deliver Software"
 [slack]: https://join.atomist.com/ "Atomist Community Slack"
