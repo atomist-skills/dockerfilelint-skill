@@ -45,13 +45,13 @@ function main () {
     local payload=${ATOMIST_PAYLOAD:-/atm/payload.json}
     local config path
     config=$( < "$payload" \
-          jq -r '.skill.configuration.instances[0].parameters[] | select( .name == "config" ) | .value' )
+          jq -r '.skill.configuration.parameters[] | select( .name == "config" ) | .value' )
     if [[ $? -ne 0 ]]; then
         err "Failed to extract config parameter from payload"
         return 1
     fi
     path=$( < "$payload" \
-          jq -r '.skill.configuration.instances[0].parameters[] | select( .name == "path" ) | .value' )          
+          jq -r '.skill.configuration.parameters[] | select( .name == "path" ) | .value' )
     if [[ $? -ne 0 ]]; then
         err "Failed to extract path parameter from payload"
         return 1
