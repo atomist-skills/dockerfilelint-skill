@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 -   Remove single dispatch. [b808850](https://github.com/atomist-skills/dockerfilelint-skill/commit/b808850ffd8fdada964c273651c5fa4e6c8241eb)
+-   Update skill category. [907c4ed](https://github.com/atomist-skills/dockerfilelint-skill/commit/907c4ed8e5d5a6bca950cf097f6f201aad36fced)
 
 ## [0.1.1](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.1.0...0.1.1) - 2020-07-26
 
