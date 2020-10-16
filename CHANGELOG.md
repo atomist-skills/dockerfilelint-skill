@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.2.0...HEAD)
 
+### Removed
+
+-   Remove icon location. [3473c25](https://github.com/atomist-skills/dockerfilelint-skill/commit/3473c2550b6853671e6035401c4eba24e0fd50a2)
+
 ## [0.2.0](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.1.1...0.2.0) - 2020-10-16
 
 ### Changed
