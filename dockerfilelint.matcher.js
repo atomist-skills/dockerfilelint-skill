@@ -16,7 +16,7 @@
 
 exports.matcher = async () => {
   const result = require(`${process.env.ATOMIST_OUTPUT_DIR}/dockerfilelint.json`);
-  
+
   const check = {
       name: "dockerfilelint",
       report: "always",
@@ -24,7 +24,7 @@ exports.matcher = async () => {
       severity: "action_required",
       annotations: [],
   };
-  
+
   const mapSeverity = (category) => {
       switch (category) {
           case "Clarity":
@@ -35,7 +35,7 @@ exports.matcher = async () => {
               return "warning";
       }
   };
-  
+
   result.files.forEach(f => {
       f.issues.forEach(i => {
           check.annotations.push({
