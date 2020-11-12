@@ -15,15 +15,36 @@
 # limitations under the License.
 
 declare Pkg=dockerfilelint
-declare Version=0.1.0
+declare Version=0.2.0
 
 set -o pipefail
 
 # write status to output location.
-# usage: status CODE MESSAGE
+# usage: status [CODE [REASON [VISIBILITY]]]
 function status () {
-    local statusFile=${ATOMIST_STATUS:-/atm/output/status.json}
-    echo '{ "code": '$1', "reason": "'$2'" }' > "$statusFile" 
+	local code=$1
+	if [[ $code ]]; then
+		shift
+	else
+		code=0
+	fi
+	local reason=$1
+	if [[ $reason ]]; then
+		shift
+	else
+		reason="dockerfilelint successful"
+	fi
+	local visibility=$1
+	if [[ $visibility ]]; then
+		shift
+	else
+		visibility=normal
+	fi
+    local status_file=${ATOMIST_STATUS:-/atm/output/status.json}
+	local status_contents
+	printf -v status_contents '{"code":%d,"reason":"%s","visibility":"%s"}' \
+		   "$code" "$reason" "$visibility"
+    echo "$status_contents" > "$status_file"
 }
 
 # print message to stdout prefixed by package name.
@@ -57,9 +78,10 @@ function main () {
         return 1
     fi
 
-    # Bail out early if Dockerfile path does not exist
-    if [[ -z $(find . -name $path) ]]; then 
-        exit 0
+    # bail out early if Dockerfile path does not exist
+    if [[ ! -f $path ]]; then
+		status 0 "Dockerfile does not exist in repository: $path" hidden
+        return 0
     fi
 
     local outdir=${ATOMIST_OUTPUT_DIR:-/atm/output}
