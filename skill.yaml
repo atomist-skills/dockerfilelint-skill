@@ -12,9 +12,7 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
-#
 
----
 apiVersion: 1
 skill:
   name: dockerfilelint-skill
@@ -35,11 +33,6 @@ skill:
       typeName: GitHubAppResourceProvider
       description: GitHub
       minRequired: 1
-    - name: slack
-      displayName: Chat
-      typeName: ChatProvider
-      description: Chat
-      minRequired: 0
   parameters:
     - string:
         name: path
