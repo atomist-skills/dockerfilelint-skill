@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.3.1...HEAD)
 
+### Changed
+
+-   Return non-zero when lint issues found. [6fa2173](https://github.com/atomist-skills/dockerfilelint-skill/commit/6fa217346c370d2feca481518737bee72caf3b76)
+
 ## [0.3.1](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.3.0...0.3.1) - 2020-11-12
 
 ### Fixed
