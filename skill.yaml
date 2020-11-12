@@ -18,6 +18,7 @@ skill:
   name: dockerfilelint-skill
   namespace: atomist
   displayName: Dockerfile-lint
+  description: Find problems in your Dockerfiles
   author: Atomist
   license: Apache-2.0
   categories:
@@ -47,9 +48,8 @@ skill:
         displayName: Configuration
         description: >-
           dockerfilelint configuration used if project does not
-          contain own configuration. See the [dockerfilelint
-          documentation]
-          (https://github.com/replicatedhq/dockerfilelint#configuring)
+          contain own configuration. See the
+          [dockerfilelint documentation](https://github.com/replicatedhq/dockerfilelint#configuring)
           on how to configure it.
         lineStyle: multiple
         required: false

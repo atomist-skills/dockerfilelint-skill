@@ -1,73 +1,84 @@
 # `atomist/dockerfilelint-skill`
 
-<!---atomist-skill-description:start--->
+Find problems in your Dockerfiles using [dockerfilelint][]
 
-Find problems in your Dockerfiles
+:sparkles: [_**View this skill in the Atomist Skills Catalog**_][atomist-skill]
+to enable this skill on your repositories. :sparkles:
 
-<!---atomist-skill-description:end--->
+See the [Atomist website][atomist] for general information about Atomist Skills
+and the [Atomist documentation site][atomist-doc] for instructions on how to get
+started using Atomist Skills.
 
----
+[dockerfielint]:
+	https://github.com/replicatedhq/dockerfilelint
+	"dockerfilelint - Linter and validator for Dockerfile"
+[atomist-skill]:
+	https://go.atomist.com/catalog/skills/atomist/commitlint-skill
+	"Atomist Skills Catalog - Automate All Your Software Tasks"
+[atomist-doc]: https://docs.atomist.com/ "Atomist Documentation"
 
-<!---atomist-skill-readme:start--->
+## Contributing
 
-# What it's useful for
+Contributions to this project from community members are encouraged and
+appreciated. Please review the [Contributing Guidelines](CONTRIBUTING.md) for
+more information. Also see the [Development](#development) section in this
+document.
 
-Get consistency across your Dockerfiles.
+## Code of conduct
 
--   Run [dockerfilelint](https://github.com/replicatedhq/dockerfilelint) with
-    the same consistent configuration across all of your projects
--   Also supports repository-specific dockerfilelint configurations
--   Uses GitHub Checks with code-level annotations for linting rule violations
+This project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). You are
+expected to act in accordance with this code by participating. Please report any
+unacceptable behavior to code-of-conduct@atomist.com.
 
-# Before you get started
+## Connect
 
-Connect and configure these integrations:
+Follow [@atomist][atomist-twitter] on Twitter and [The Atomist
+Blog][atomist-blog].
 
-1. **GitHub**
+[atomist-twitter]: https://twitter.com/atomist "Atomist on Twitter"
+[atomist-blog]: https://blog.atomist.com/ "The Atomist Blog"
 
-The **GitHub** integration must be configured in order to use this skill.
+## Support
 
-# How to configure
+General support questions should be discussed in the `#support` channel in the
+[Atomist community Slack workspace][slack].
 
-1. **Configure path to Dockerfile**
+If you find a problem, please create an [issue](../../issues).
 
-    Provide a relative path or pattern to your Dockerfiles in the repository.
+## Development
 
-1. **Specify an optional dockerfilelint configuration**
+You will need to install [Node.js][node] to build and test this project.
 
-    Provide the
-    [dockerfilelint configuration](https://github.com/replicatedhq/dockerfilelint#configuring)
-    to be used for linting when a repository does not have its own
-    configuration.
+[node]: https://nodejs.org/ "Node.js"
 
-1. **Determine repository scope**
+### Build and test
 
-    ![Repository filter](docs/images/repo-filter.png)
+Install dependencies.
 
-    By default, this skill will be enabled for all repositories in all
-    organizations you have connected.
+```
+$ npm ci
+```
 
-    To restrict the organizations or specific repositories on which the skill
-    will run, you can explicitly choose organization(s) and repositories.
+Use the `build` package script to compile, test, lint, and build the
+documentation.
 
-# How to lint your Dockerfiles
+```
+$ npm run build
+```
 
-1. **Set up the skill by providing an dockerfilelint configuration**
+### Release
 
-1. **Commit and push your code changes**
+Releases are created by pushing a release [semantic version][semver] tag to the
+repository, Atomist Skills take care of the rest.
 
-1. **Enjoy automatic linting and fixes!**
+To make this skill globally available, set its maturity to "stable" via the set
+maturity drop-down in its Atomist Community Slack channel.
 
-To create feature requests or bug reports, create an
-[issue in the repository for this skill](https://github.com/atomist-skills/dockerfilelint-skill/issues).
-See the [code](https://github.com/atomist-skills/dockerfilelint-skill) for the
-skill.
-
-<!---atomist-skill-readme:end--->
+[semver]: https://semver.org/ "Semantic Version"
 
 ---
 
 Created by [Atomist][atomist]. Need Help? [Join our Slack workspace][slack].
 
-[atomist]: https://atomist.com/ "Atomist - How Teams Deliver Software"
+[atomist]: https://atomist.com/ "Atomist - Automate All the Software Things"
 [slack]: https://join.atomist.com/ "Atomist Community Slack"
