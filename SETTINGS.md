@@ -15,6 +15,8 @@ Connect and configure these integrations:
 
 1.  **Specify an optional dockerfilelint configuration**
 
+    ![Dockerfile path](docs/images/configuration.png)
+
     Provide the
     [dockerfilelint configuration](https://github.com/replicatedhq/dockerfilelint#configuring)
     to be used for linting when a repository does not have its own
