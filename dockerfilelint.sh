@@ -1,4 +1,5 @@
 #! /bin/bash
+# Set up and run dockerfilelint
 #
 # Copyright © 2020 Atomist, Inc.
 #
@@ -61,8 +62,7 @@ function err () {
 }
 
 function main () {
-        
-    # Extract some skill configuration from the incoming event payload
+    # extract skill configuration from the incoming event payload
     local payload=${ATOMIST_PAYLOAD:-/atm/payload.json}
     local config path
     config=$( < "$payload" \
@@ -86,7 +86,7 @@ function main () {
 
     local outdir=${ATOMIST_OUTPUT_DIR:-/atm/output}
 
-    # Make the problem matcher available to the runtime
+    # make the problem matcher available to the runtime
     local matchers_dir=${ATOMIST_MATCHERS_DIR:-$outdir/matchers}
     if ! mkdir -p "$matchers_dir"; then
         err "Failed to create matcher output directory: $matchers_dir"
@@ -94,10 +94,9 @@ function main () {
     fi
     if ! cp /app/dockerfilelint.matcher.js "$matchers_dir"; then
         err "Failed to copy dockerfilelint.matcher.js to $matchers_dir"
-        #return 1
     fi
 
-    # Prepare command arguments
+    # prepare command arguments
     local homedir=${ATOMIST_HOME:-/atm/home}
     local config_file=$homedir/.dockerfilelintrc
     if [[ $config && ! -f "$config_file" ]]; then
@@ -106,18 +105,19 @@ function main () {
             return 1
         fi
     fi
-    
+
     local output_file=$outdir/dockerfilelint.json
     dockerfilelint --json $path > "$output_file"
-    if [ $? -eq 0 ]; then
+	local rv=$?
+    if [ $rv -eq 0 ]; then
         status 0 "No errors or warnings found"
         return 0
-    elif [ $? -eq 1 ]; then
+    elif [ $rv -eq 1 ]; then
         status 0 "Errors or warnings found"
-        return 0        
-    else 
+        return 0
+    else
         status 1 "Unknown dockerfilelint exit code"
-        return $?        
+        return $rv
     fi
 }
 
