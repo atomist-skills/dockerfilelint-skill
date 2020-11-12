@@ -1,7 +1,9 @@
 FROM node:lts
 
-RUN apt-get update && apt-get install -y \
-   jq \
+LABEL maintainer="Atomist <docker@atomist.com>"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+     jq \
    && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g dockerfilelint
@@ -10,4 +12,4 @@ WORKDIR /app
 COPY dockerfilelint.* /app/
 
 WORKDIR /atm/home
-ENTRYPOINT ["bash", "/app/dockerfilelint.sh"]
+ENTRYPOINT ["/bin/bash", "/app/dockerfilelint.sh"]
