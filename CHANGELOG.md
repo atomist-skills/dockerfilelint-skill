@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 -   Remove optional chat integration. [272ce31](https://github.com/atomist-skills/dockerfilelint-skill/commit/272ce311384f392b7ee9e3284a5b9fa1312c33ca)
 
+### Fixed
+
+-   Fix Dockerfile path existence check. [9177ca5](https://github.com/atomist-skills/dockerfilelint-skill/commit/9177ca581cbb557a218b939d1ff7cc56889d6408)
+
 ## [0.2.1](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.2.0...0.2.1) - 2020-10-16
 
 ### Removed
