@@ -20,6 +20,19 @@ declare Version=0.2.0
 
 set -o pipefail
 
+# print message to stdout prefixed by package name.
+# usage: msg MESSAGE
+function msg () {
+    echo "$Pkg: $*"
+}
+
+# print message to stderr prefixed by package name.
+# usage: err MESSAGE
+function err () {
+    msg "$*" 1>&2
+    status 1 "$*"
+}
+
 # write status to output location.
 # usage: status [CODE [REASON [VISIBILITY]]]
 function status () {
@@ -48,19 +61,7 @@ function status () {
     echo "$status_contents" > "$status_file"
 }
 
-# print message to stdout prefixed by package name.
-# usage: msg MESSAGE
-function msg () {
-    echo "$Pkg: $*"
-}
-
-# print message to stderr prefixed by package name.
-# usage: err MESSAGE
-function err () {
-    msg "$*" 1>&2
-    status 1 "$*"
-}
-
+# usage: main "$@"
 function main () {
     # extract skill configuration from the incoming event payload
     local payload=${ATOMIST_PAYLOAD:-/atm/payload.json}
@@ -113,10 +114,10 @@ function main () {
         status 0 "No errors or warnings found"
         return 0
     elif [ $rv -eq 1 ]; then
-        status 0 "Errors or warnings found"
-        return 0
+        status 1 "Errors or warnings found"
+        return 1
     else
-        status 1 "Unknown dockerfilelint exit code"
+        status "$rv" "Unknown dockerfilelint exit code"
         return $rv
     fi
 }
