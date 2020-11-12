@@ -21,7 +21,7 @@ exports.matcher = async () => {
       name: "dockerfilelint",
       report: "always",
       summary: `dockerfilelint found ${result.totalIssues} ${result.totalIssues === 1 ? "issue" : "issues"}`,
-      severity: "action_required",
+      severity: result.totalIssues < 1 ? "success" : "action_required",
       annotations: [],
   };
 

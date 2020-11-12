@@ -84,6 +84,16 @@ function main () {
         return 0
     fi
 
+    # prepare command arguments
+    local homedir=${ATOMIST_HOME:-/atm/home}
+    local config_file=$homedir/.dockerfilelintrc
+    if [[ $config && ! -f "$config_file" ]]; then
+        if ! echo "$config" > "$config_file"; then
+            err "Failed to create dockerfilelint configuration file $config_file"
+            return 1
+        fi
+    fi
+
     local outdir=${ATOMIST_OUTPUT_DIR:-/atm/output}
 
     # make the problem matcher available to the runtime
@@ -94,16 +104,6 @@ function main () {
     fi
     if ! cp /app/dockerfilelint.matcher.js "$matchers_dir"; then
         err "Failed to copy dockerfilelint.matcher.js to $matchers_dir"
-    fi
-
-    # prepare command arguments
-    local homedir=${ATOMIST_HOME:-/atm/home}
-    local config_file=$homedir/.dockerfilelintrc
-    if [[ $config && ! -f "$config_file" ]]; then
-        if ! echo "$config" > "$config_file"; then
-            err "Failed to create dockerfilelint configuration file $config_file"
-            return 1
-        fi
     fi
 
     local output_file=$outdir/dockerfilelint.json
