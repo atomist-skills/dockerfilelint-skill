@@ -1,6 +1,6 @@
 # `atomist/dockerfilelint-skill`
 
-Find problems in your Dockerfiles using [dockerfilelint][]
+Find problems in your Dockerfiles using [dockerfilelint][].
 
 :sparkles: [_**View this skill in the Atomist Skills Catalog**_][atomist-skill]
 to enable this skill on your repositories. :sparkles:
@@ -9,12 +9,12 @@ See the [Atomist website][atomist] for general information about Atomist Skills
 and the [Atomist documentation site][atomist-doc] for instructions on how to get
 started using Atomist Skills.
 
-[dockerfielint]:
-    https://github.com/replicatedhq/dockerfilelint
-    "dockerfilelint - Linter and validator for Dockerfile"
+[dockerfilelint]:
+	https://github.com/replicatedhq/dockerfilelint
+	"dockerfilelint - Linter and validator for Dockerfile"
 [atomist-skill]:
-    https://go.atomist.com/catalog/skills/atomist/commitlint-skill
-    "Atomist Skills Catalog - Automate All Your Software Tasks"
+	https://go.atomist.com/catalog/skills/atomist/commitlint-skill
+	"Atomist Skills Catalog - Automate All Your Software Tasks"
 [atomist-doc]: https://docs.atomist.com/ "Atomist Documentation"
 
 ## Contributing
