@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 -   Clean up Dockerfile. [2a24b31](https://github.com/atomist-skills/dockerfilelint-skill/commit/2a24b31aad8f1178ea74bc9cae9943ab555622dc)
+-   Clean up dockerfilelint entrypoint script. [c1fa19b](https://github.com/atomist-skills/dockerfilelint-skill/commit/c1fa19bfb36d8ad59ce542e5d24a973cde7a2b33)
 
 ### Removed
 
