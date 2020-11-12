@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.2.1...HEAD)
 
+### Changed
+
+-   Clean up Dockerfile. [2a24b31](https://github.com/atomist-skills/dockerfilelint-skill/commit/2a24b31aad8f1178ea74bc9cae9943ab555622dc)
+
 ### Removed
 
 -   Remove optional chat integration. [272ce31](https://github.com/atomist-skills/dockerfilelint-skill/commit/272ce311384f392b7ee9e3284a5b9fa1312c33ca)
