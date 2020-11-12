@@ -10,11 +10,11 @@ and the [Atomist documentation site][atomist-doc] for instructions on how to get
 started using Atomist Skills.
 
 [dockerfilelint]:
-	https://github.com/replicatedhq/dockerfilelint
-	"dockerfilelint - Linter and validator for Dockerfile"
+    https://github.com/replicatedhq/dockerfilelint
+    "dockerfilelint - Linter and validator for Dockerfile"
 [atomist-skill]:
-	https://go.atomist.com/catalog/skills/atomist/commitlint-skill
-	"Atomist Skills Catalog - Automate All Your Software Tasks"
+    https://go.atomist.com/catalog/skills/atomist/commitlint-skill
+    "Atomist Skills Catalog - Automate All Your Software Tasks"
 [atomist-doc]: https://docs.atomist.com/ "Atomist Documentation"
 
 ## Contributing
