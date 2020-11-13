@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 -   Return non-zero when lint issues found. [6fa2173](https://github.com/atomist-skills/dockerfilelint-skill/commit/6fa217346c370d2feca481518737bee72caf3b76)
 
+### Fixed
+
+-   Fix dockerfilelint exit code handling. [233797c](https://github.com/atomist-skills/dockerfilelint-skill/commit/233797c4367a5e1f0849618929daa317f1c7f8f2)
+
 ## [0.3.1](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.3.0...0.3.1) - 2020-11-12
 
 ### Fixed
