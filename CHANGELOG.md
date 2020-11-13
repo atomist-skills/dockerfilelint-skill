@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.4.0...HEAD)
 
+### Fixed
+
+-   Only set visibility if hidden. [d222d58](https://github.com/atomist-skills/dockerfilelint-skill/commit/d222d589753030d811ece2f16710c0a638267460)
+
 ## [0.4.0](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.3.1...0.4.0) - 2020-11-13
 
 ### Changed
