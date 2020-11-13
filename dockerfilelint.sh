@@ -55,13 +55,15 @@ function status () {
 	local visibility=$1
 	if [[ $visibility ]]; then
 		shift
-	else
-		visibility=normal
 	fi
 	local status_file=${ATOMIST_STATUS:-/atm/output/status.json}
 	local status_contents
-	printf -v status_contents '{"code":%d,"reason":"%s","visibility":"%s"}' \
-		   "$code" "$reason" "$visibility"
+	if [[ $visibility ]]; then
+		printf -v status_contents '{"code":%d,"reason":"%s","visibility":"%s"}' \
+			   "$code" "$reason" "$visibility"
+	else
+		printf -v status_contents '{"code":%d,"reason":"%s"}' "$code" "$reason"
+	fi
 	if ! echo "$status_contents" > "$status_file"; then
 		err "Failed to write status to $status_file"
 		return 1
@@ -72,7 +74,7 @@ function status () {
 function main () {
 	# extract skill configuration from the incoming event payload
 	local payload=${ATOMIST_PAYLOAD:-/atm/payload.json}
-	local config path slug url
+	local config path slug
 	config=$( < "$payload" \
 		  jq -r '.skill.configuration.parameters[] | select( .name == "config" ) | .value' )
 	if [[ $? -ne 0 ]]; then
@@ -129,7 +131,7 @@ function main () {
 		return 0
 	else
 		status "$rv" "Lint issues found in $slug/$path"
-		return $rv
+		return "$rv"
 	fi
 }
 
