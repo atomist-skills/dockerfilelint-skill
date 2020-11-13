@@ -127,11 +127,8 @@ function main () {
 	if [ $rv -eq 0 ]; then
 		status 0 "No lint issues found in $slug/$path"
 		return 0
-	elif [ $rv -eq 1 ]; then
-		status 1 "Lint issues found in $slug/$path"
-		return 1
 	else
-		status "$rv" "Unknown dockerfilelint exit code for $slug/$path"
+		status "$rv" "Lint issues found in $slug/$path"
 		return $rv
 	fi
 }
