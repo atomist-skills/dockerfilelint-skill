@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN npm install -g dockerfilelint
 
-WORKDIR /app
 COPY dockerfilelint.* /app/
 
 WORKDIR /atm/home
+
 ENTRYPOINT ["/bin/bash", "/app/dockerfilelint.sh"]
