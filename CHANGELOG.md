@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist-skills/dockerfilelint-skill/compare/0.4.0...HEAD)
 
+### Changed
+
+-   Update skill icon. [a40bca3](https://github.com/atomist-skills/dockerfilelint-skill/commit/a40bca3db08c227ceba6c0e1c5f534be6a015e50)
+
 ### Fixed
 
 -   Only set visibility if hidden. [d222d58](https://github.com/atomist-skills/dockerfilelint-skill/commit/d222d589753030d811ece2f16710c0a638267460)
