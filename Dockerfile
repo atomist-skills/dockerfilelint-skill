@@ -1,4 +1,4 @@
-FROM node:lts@sha256:807050b113fe722f90c0f2b64be3c0ecb7d85f9dc0e5c2ad3577be758f985509
+FROM node:lts@sha256:1844333e5a9df490d932161570ae61357af0d1788b0f3ec0ee2a437a3f0d4f8e
 
 LABEL maintainer="Atomist <docker@atomist.com>"
 
